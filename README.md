@@ -19,7 +19,7 @@ Welcome to the Personalized Chatbot Interface project! This project showcases a 
 ![Chatbot Demo](public/demo1.png)  
 Here's a screenshot of the chatbot interface:
 
-<img src="url/to/your/screenshot.jpg" alt="Chatbot Interface Screenshot" width="600">
+<img src="public/demo2.png" alt="Chatbot Interface Screenshot" width="600">
 ## Getting Started
 
 Follow these instructions to set up and run the project locally.
