@@ -16,7 +16,7 @@ Welcome to the Personalized Chatbot Interface project! This project showcases a 
 
 ## Demo
 
-![Chatbot Demo](public/demo1.png) [Chatbot Demo2](public/demo2.png)   [Chatbot Demo3](public/demo3.png)
+![Chatbot Demo](public/demo1.png)   [Chatbot Demo3](public/demo3.png)
 
 ## Getting Started
 
