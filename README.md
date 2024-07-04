@@ -30,31 +30,30 @@ Follow these instructions to set up and run the project locally.
 ### Installation
 
 1. **Clone the repository:**
-
 bash
 
-git clone https://github.com/Eshwarvijay007/chatboot.git
-cd chatboot
+   git clone https://github.com/Eshwarvijay007/chatboot.git
+   cd chatboot
 
 2. **Install dependencies:**
 bash
 
-npm install
+   npm install
 
 4. **Set up environment variables:**
-Create a .env file in the root directory and add your API key:
+    Create a .env file in the root directory and add your API key:
 
 API_KEY=your_api_key_here
 
 5. **Run the project:**
 bash
 
-npm start
-Visit http://localhost:3000 in your browser to see the chatbot in action.
+   npm start
+   Visit http://localhost:3000 in your browser to see the chatbot in action.
 
 7. **Usage:**
-Sending Messages: Type your message in the input box and press the send button.
-Theme Toggle: Use the "Toggle Theme" button to switch between light and dark themes.
+    Sending Messages: Type your message in the input box and press the send button.
+    Theme Toggle: Use the "Toggle Theme" button to switch between light and dark themes.
 
 ## Contributing
 Contributions are welcome! Please fork the repository and use a feature branch. Pull requests are warmly welcome.
