@@ -36,20 +36,23 @@ bash
 git clone https://github.com/Eshwarvijay007/chatboot.git
 cd chatboot
 
-2. Install dependencies:
+2. **Install dependencies:**
 bash
+
 npm install
 
-3. Set up environment variables:
+4. **Set up environment variables:**
 Create a .env file in the root directory and add your API key:
+
 API_KEY=your_api_key_here
 
-4. Run the project:
+5. **Run the project:**
 bash
+
 npm start
 Visit http://localhost:3000 in your browser to see the chatbot in action.
 
-5. Usage
+7. **Usage:**
 Sending Messages: Type your message in the input box and press the send button.
 Theme Toggle: Use the "Toggle Theme" button to switch between light and dark themes.
 
