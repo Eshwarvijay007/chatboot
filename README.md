@@ -52,22 +52,8 @@ Visit http://localhost:3000 in your browser to see the chatbot in action.
 Sending Messages: Type your message in the input box and press the send button.
 Theme Toggle: Use the "Toggle Theme" button to switch between light and dark themes.
 
-6. File Structure
-chatbot-interface/
-├── public/
-│   ├── placeholder-user.jpg
-│   ├── styles.css
-│   └── index.html
-├── src/
-│   ├── index.js
-│   └── api.js
-├── .env
-├── .gitignore
-├── package.json
-└── README.md
-
-Contributing
+## Contributing
 Contributions are welcome! Please fork the repository and use a feature branch. Pull requests are warmly welcome.
 
-Contact
+## Contact
 If you have any questions or suggestions, feel free to reach out to me at eshwarvijaynallur@gmail.com.
