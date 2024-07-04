@@ -43,7 +43,7 @@ bash
 4. **Set up environment variables:**
     Create a .env file in the root directory and add your API key:
 
-API_KEY=your_api_key_here
+    API_KEY=your_api_key_here
 
 5. **Run the project:**
 bash
