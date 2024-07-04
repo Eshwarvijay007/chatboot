@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            margin: 0;
+            color: #fff;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            height: 90vh;
+            max-height: 800px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #2a2a2a;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: #3a3a3a;
+            padding: 15px;
+            border-bottom: 1px solid #444;
+        }
+
+        .chat-header img {
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+        }
+
+        .chat-header .title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #00aaff;
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .chat-message img {
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+        }
+
+        .user-message, .bot-message {
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 75%;
+        }
+
+        .user-message {
+            background-color: #0056b3;
+            color: #fff;
+            align-self: flex-end;
+        }
+
+        .bot-message {
+            background-color: #550000;
+            color: #fff;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #444;
+            padding: 15px;
+        }
+
+        .chat-input textarea {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: #fff;
+            resize: none;
+            outline: none;
+        }
+
+        .chat-input button {
+            background-color: #00aaff;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            margin-left: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            outline: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chat-input button:hover {
+            background-color: #0077cc;
+        }
+
+        .chat-input button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <header class="chat-header">
+        <img src="/placeholder-user.jpg" alt="ChatGPT">
+        <div class="title">ChatGPT</div>
+    </header>
+    <div class="chat-messages" id="chat-messages">
+        <div class="chat-message">
+            <img src="/placeholder-user.jpg" alt="You">
+            <div class="user-message">
+                Hi there! Can you explain what airplane turbulence is?
+            </div>
+        </div>
+        <div class="chat-message" style="justify-content: flex-end;">
+            <div class="bot-message">
+                Of course! Airplane turbulence happens when the plane encounters pockets of air that are moving
+                differently. It's like sailing a boat on choppy water - the plane can feel like it's bouncing or
+                shaking a bit. It's completely normal and usually not dangerous at all.
+            </div>
+            <img src="/placeholder-user.jpg" alt="ChatGPT">
+        </div>
+        <div class="chat-message">
+            <img src="/placeholder-user.jpg" alt="You">
+            <div class="user-message">
+                I see, that makes sense. Thank you for the explanation!
+            </div>
+        </div>
+        <div class="chat-message" style="justify-content: flex-end;">
+            <div class="bot-message">
+                You're welcome! I'm always happy to help explain things. Let me know if you have any other questions.
+            </div>
+            <img src="/placeholder-user.jpg" alt="ChatGPT">
+        </div>
+    </div>
+    <div class="chat-input">
+        <textarea placeholder="Type your message..."></textarea>
+        <button type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
