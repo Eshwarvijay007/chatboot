@@ -32,9 +32,7 @@ Follow these instructions to set up and run the project locally.
 1. **Clone the repository:**
 
 bash
-
-[git clone](https://github.com/Eshwarvijay007/chatboot.git)
-
+git clone https://github.com/Eshwarvijay007/chatboot.git
 cd chatbot-interface
 
 2. Install dependencies:
