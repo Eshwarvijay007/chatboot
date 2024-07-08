@@ -37,14 +37,13 @@
             text-align: center;
             font-size: 1.2em;
         }
-        
         .chat-messages {
             flex-grow: 1;
             padding: 10px;
             overflow-y: auto;
             height: calc(100vh - 200px);
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-            -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         .chat-messages::-webkit-scrollbar {
             display: none;
@@ -57,23 +56,23 @@
         .user-message {
             background-color: #0056b3;
             align-self: flex-end;
-            border: 1px  #007bff;
+            border: 1px #007bff;
             color: #fff;
         }
-        .bot-message,#intro {
+        .bot-message, #intro {
             background-color: #550000;
             align-self: flex-start;
-            border: 1px  #aa0000;
+            border: 1px #aa0000;
             padding: 15px;
             border-radius: 5px;
             color: #fff;
-            max-width: 80%; /* Limiting width to improve readability */
-            word-wrap: break-word; /* Wrap long words */
+            max-width: 80%;
+            word-wrap: break-word;
         }
         .chat-input {
             display: flex;
-            justify-content: space-between; /* Distribute space between items */
-            align-items: center; /* Align items vertically in the middle */
+            justify-content: space-between;
+            align-items: center;
             border-top: 1px solid #444;
             border-radius: 10px;
         }
@@ -85,55 +84,29 @@
             background-color: #333;
             color: #fff;
             border-radius: 20px;
-            margin-left: 5px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-            margin-right: 10px; /* Add some margin to the right to create space for the buttons */
+            margin: 5px;
         }
         .chat-input button {
-            -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
             padding: 10px;
-            /* background-color: #007bff; */
             color: #fff;
             border: none;
             cursor: pointer;
             transition: background-color 0.3s ease, border-radius 0.3s ease;
             border-radius: 20px;
-            margin-left: 5px;
-            margin-right: 3px;
+            margin: 10px;
             background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-    box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+            box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
             width: 200px;
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 10px;
-    height: 45px;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-
-    border-radius: 50px;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+            font-size: 15px;
+            font-weight: 600;
+            background-size: 300% 100%;
         }
         .chat-input button:focus {
-    outline: none;
-}
-        .chat-input button:hover {
-            /* background-color: #0056b3; */
-            background-position: 100% 0;
-    moz-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
+            outline: none;
         }
-        /* Light Theme */
+        .chat-input button:hover {
+            background-position: 100% 0;
+        }
         .light-theme {
             background-color: #f0f0f0;
             color: #333;
@@ -150,7 +123,7 @@
             background-color: #212b97;
             border-color: #375ac2;
         }
-        .light-theme .bot-message #intro{
+        .light-theme .bot-message, #intro {
             background-color: #ffdddd;
             border-color: #f8b5b1;
             color: #a00000;
@@ -166,219 +139,79 @@
             height: 64px;
             animation: spin 2s linear infinite;
         }
-
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
         h1 {
-  font-size: 27px;
-  background: -webkit-linear-gradient(rgb(98, 255, 134), rgb(191, 14, 215));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: bolder;
-}
-/* .btn-flip {
-    padding: 10px;
-            background-color: hwb(211 0% 0%);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, border-radius 0.3s ease;
-            border-radius: 20px;
-            margin-left: 5px;
-            margin-right: 3px;
-}
-.btn-flip:hover:after {
-  opacity: 1;
-  transform: translateY(0) rotateX(0);
-}
-.btn-flip:hover:before {
-  opacity: 0;
-  transform: translateY(50%) rotateX(90deg);
-}
-.btn-flip:after {
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  color: #0d0d45;
-  display: block;
-  transition: 0.5s;
-  position: absolute;
-  /* background: #000003;  */
-  /* content: attr(data-back);
-  transform: translateY(-50%) rotateX(90deg);
-}
-.btn-flip:before {
-  top: 0;
-  left: 0;
-  opacity: 1;
-  color: #f9f9f9; 
-  display: block;
-  padding: 0 30px;
-  line-height: 40px;
-  transition: 0.5s;
-  position: relative;
-  background: hwb(211 0% 0%);
-  content: attr(data-front);
-  transform: translateY(0) rotateX(0);
-} */ */
-
-/* .glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-on-hover:active {
-    color: #000
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #111;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-} */
-
+            font-size: 27px;
+            background: -webkit-linear-gradient(rgb(98, 255, 134), rgb(191, 14, 215));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bolder;
+        }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="dark-theme">
-
 <div class="chat-container">
     <div class="chat-header">
-        <h1>Chatbot</h1></div>
+        <h1>Chatbot</h1>
+    </div>
     <div class="chat-messages" id="chat-messages">
         <p id="intro">hi there<br>How can I help you today??</p>
-        <!-- Loader Element -->
         <div id="loader" class="loader" style="display:none;">Loading...</div>
     </div>
     <div class="chat-input">
         <input type="text" id="user-input" placeholder="Type a message..." />
-        <button onclick="sendMessage()" class="glow-on-hover" type="button">Send</button>
-        <button onclick="toggleTheme()" >Toggle</button>
-        <!-- <a href="#" class="btn-flip" onclick="toggleTheme()" data-back="Light" data-front="Dark"></a> -->
+        <button id="send-button" class="glow-on-hover" type="button">Send</button>
+        <button id="toggle-theme-button">Toggle</button>
     </div>
 </div>
-
 <script>
-    const body = document.body;
+    const body = $('body');
 
-    async function sendMessage() {
-        const userInput = document.getElementById('user-input');
-        const message = userInput.value;
-        if (message.trim() === '') return;
+    function sendMessage() {
+        const userInput = $('#user-input');
+        const message = userInput.val().trim();
+        if (message === '') return;
 
-        // Display user message
         displayMessage('user', message);
+        userInput.val('');
 
-        // Clear input field
-        userInput.value = '';
-
-        // Get bot response from API
-        try {
-            const botResponse = await getBotResponse(message);
-            displayMessage('bot', botResponse);
-        } catch (error) {
-            displayMessage('bot', 'Sorry, something went wrong.');
-        }
+        $.ajax({
+            url: 'http://localhost:3000/api/chat',
+            method: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ message }),
+            success: function(response) {
+                displayMessage('bot', response.response);
+            },
+            error: function() {
+                displayMessage('bot', 'Sorry, something went wrong.');
+            }
+        });
     }
 
     function displayMessage(sender, message) {
-        const chatMessages = document.getElementById('chat-messages');
-        if (!chatMessages) {
-            console.error('chatMessages is not defined or accessible.');
-            return;
-        }
+        const chatMessages = $('#chat-messages');
+        const messageElement = $('<div></div>').addClass('chat-message').addClass(sender === 'user' ? 'user-message' : 'bot-message').text(message);
+        chatMessages.append(messageElement);
 
-        const messageElement = document.createElement('div');
-        messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
-        messageElement.textContent = message;
-        chatMessages.appendChild(messageElement);
-
-        // Use setTimeout to defer the scrollTop update until after rendering
         setTimeout(() => {
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            chatMessages.scrollTop(chatMessages.prop('scrollHeight'));
         }, 0);
     }
 
-    async function getBotResponse(message) {
-        try {
-            console.log('Sending message to API:', message);
-            const response = await fetch('http://localhost:3000/api/chat', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ message })
-            });
-            console.log('Received response:', response);
-            if (!response.ok) {
-                throw new Error(`Server error: ${response.status}`);
-            }
-            const data = await response.json();
-            console.log('Response data:', data);
-            return formatBotResponse(data.response);
-        } catch (error) {
-            console.error('Error fetching bot response:', error);
-            throw error;
-        }
-    }
-
-    function formatBotResponse(response) {
-        // Implement any formatting logic here if needed
-        return response; // Currently returning the response as is
-    }
-
     function toggleTheme() {
-        body.classList.toggle('light-theme');
+        body.toggleClass('light-theme');
     }
-</script>
 
+    $(document).ready(function() {
+        $('#send-button').on('click', sendMessage);
+        $('#toggle-theme-button').on('click', toggleTheme);
+    });
+</script>
 </body>
 </html>

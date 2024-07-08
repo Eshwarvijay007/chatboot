@@ -2,24 +2,20 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
+const cors = require('cors');
 
 const app = express();
 const port = 3000;
+
 require('dotenv').config();
 const apiKey = process.env.API_KEY;
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
 app.use(bodyParser.json());
-
-// Enable CORS if needed
-const cors = require('cors');
 app.use(cors());
-
-// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve the HTML file for the chat interface
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
