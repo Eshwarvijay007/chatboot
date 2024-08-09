@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot Interface</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+   
     <style>
+        /* Styles as you defined them */
         body {
             font-family: 'Montserrat', sans-serif;
             display: flex;
@@ -70,7 +72,28 @@
             color: #fff;
             max-width: 80%;
             word-wrap: break-word;
+            margin-bottom: 10px;
+            line-height: 1.5; 
         }
+        .bot-message h1, .bot-message h2, .bot-message h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #ffeb3b; /* Example: Different color for headings */
+}
+
+.bot-message ul, .bot-message ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.bot-message li {
+    margin-bottom: 5px;
+}
+
+.bot-message p {
+    margin-bottom: 10px;
+}
+
         .chat-input {
             display: flex;
             justify-content: space-between;
@@ -143,108 +166,75 @@
             font-weight: bolder;
         }
         @media (min-width: 768px) {
-        .chat-container {
-            width: 90%;
-            margin: 0 auto;
+            .chat-container {
+                width: 90%;
+                margin: 0 auto;
+            }
+            .chat-header {
+                font-size: 0.9em;
+            }
+            .chat-messages {
+                height: calc(100vh - 150px);
+            }
+            .chat-input input {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            .chat-input button {
+                width: 20%;
+                font-size: 0.9em;
+            }
         }
-        .chat-header {
-            font-size: 0.9em;
+        @media (min-width: 1024px) {
+            .chat-container {
+                width: 90%;  /* Wider than the mobile view */
+                margin: 20px auto; /* Centered with more margin */
+            }
+            .chat-header {
+                font-size: 1.2em; /* Larger font size */
+            }
+            .chat-messages {
+                height: calc(100vh - 200px); /* More vertical space for messages */
+            }
+            .chat-input input {
+                padding: 15px; /* More padding for typing area */
+                font-size: 1em; /* Standard font size */
+            }
+            .chat-input button {
+                width: 15%; /* Fixed width for consistency */
+                font-size: 1em; /* Standard font size */
+                padding: 15px; /* More padding for button */
+            }
         }
-        .chat-messages {
-            height: calc(100vh - 150px);
+        @media (max-width: 320px) {
+            #toggle-theme-button {
+                display: none;
+            }
         }
-        .chat-input input {
-            padding: 10px;
-            font-size: 0.9em;
-        }
-        .chat-input button {
-            width: 20%;
-            font-size: 0.9em;
-        }
-        /* HTML: <div class="loader"></div> */
-        .loader {
-         width: 100%;
-         height: 6px;
-         background: linear-gradient(270deg, #eb31b0, #e4c352, #7df8d6);
-  background-size: 800% 800%;
-  animation: Gradient 16s ease infinite;
-  position: relative;
-  overflow: hidden;
-}
-
-.loader:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(to right, #000, #000); /* Gradient color */
-  animation: fill 2s infinite linear;
-}
-
-@keyframes Gradient {
-  0% { background-position: 0% 70%; }
-  80% { background-position: 100% 70%; }
-  100% { background-position: 0% 70%; }
-}
-
-@keyframes fill {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-    }
-    @media (min-width: 1024px) {
-        .chat-container {
-            width: 90%;  /* Wider than the mobile view */
-            margin: 20px auto; /* Centered with more margin */
-        }
-        .chat-header {
-            font-size: 1.2em; /* Larger font size */
-        }
-        .chat-messages {
-            height: calc(100vh - 200px); /* More vertical space for messages */
-        }
-        .chat-input input {
-            padding: 15px; /* More padding for typing area */
-            font-size: 1em; /* Standard font size */
-        }
-        .chat-input button {
-            width: 15%; /* Fixed width for consistency */
-            font-size: 1em; /* Standard font size */
-            padding: 15px; /* More padding for button */
-        }
-    }
-    @media (max-width: 320px) {
-        #toggle-theme-button {
-            display: none;
-    }
-}
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="dark-theme">
-<div class="chat-container">
-    <div class="chat-header">
-        <h1>Chatbot</h1>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>Chatbot</h1>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <p id="intro">Hi there!<br>How can I help you today?</p>
+        </div>
+        <div id="loader" class="loader" style="display: none;"></div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message..." />
+            <button id="send-button" class="glow-on-hover" type="button">Send</button>
+            <button id="toggle-theme-button">Toggle Theme</button>
+        </div>
     </div>
-    <div class="chat-messages" id="chat-messages">
-        <p id="intro">hi there<br>How can I help you today??</p>
-        
-    </div>
-    <div id="loader" class="loader" style="display: none;"></div>
-    <div class="chat-input">
-        <input type="text" id="user-input" placeholder="Type a message..." />
-        <button id="send-button" class="glow-on-hover" type="button">Send</button>
-        <button id="toggle-theme-button">Toggle</button>
-    </div>
-</div>
-<script>
-    const body = $('body');
+    <script>
+        console.log(marked);
+        const body = $('body');
 
-    function sendMessage() {
+        function sendMessage() {
     const userInput = $('#user-input');
     const message = userInput.val().trim();
     if (message === '') return;
@@ -261,11 +251,13 @@
         contentType: 'application/json',
         data: JSON.stringify({ message }),
         success: function(response) {
+            console.log('Server Response:', response); // Log the response to ensure it's being received
             displayMessage('bot', response.response);
             // Hide the loader on success
             $('#loader').hide();
         },
-        error: function() {
+        error: function(xhr, status, error) {
+            console.error('Error in AJAX request:', error); // Log any AJAX errors
             displayMessage('bot', 'Sorry, something went wrong.');
             // Hide the loader on error
             $('#loader').hide();
@@ -273,32 +265,33 @@
     });
 }
 
+function displayMessage(sender, message) {
+    const chatMessages = $('#chat-messages');
+    const messageElement = $('<div></div>')
+        .addClass('chat-message')
+        .addClass(sender === 'user' ? 'user-message' : 'bot-message')
+        .html(message);
+    
+    chatMessages.append(messageElement);
 
-    function displayMessage(sender, message) {
-        const chatMessages = $('#chat-messages');
-        const messageElement = $('<div></div>').addClass('chat-message').addClass(sender === 'user' ? 'user-message' : 'bot-message').text(message);
-        chatMessages.append(messageElement);
+    // Scroll to the bottom of the chat
+    setTimeout(() => {
+        chatMessages.scrollTop(chatMessages.prop('scrollHeight'));
+    }, 0);
+}
 
-        setTimeout(() => {
-            chatMessages.scrollTop(chatMessages.prop('scrollHeight'));
-        }, 0);
-    }
 
-    function toggleTheme() {
-        body.toggleClass('light-theme');
-    }
+        $('#send-button').click(sendMessage);
 
-    $(document).ready(function() {
-        $('#send-button').on('click', sendMessage);
-        $('#toggle-theme-button').on('click', toggleTheme);
-
-        $('#user-input').on('keypress', function(e) {
-            if (e.which == 13) { // 13 is the key code for Enter
-                e.preventDefault(); // Prevent the default action to stop scrolling when space is pressed
-                sendMessage(); // Directly call sendMessage instead of clicking the button
+        $('#user-input').keypress(function(e) {
+            if (e.which === 13) {
+                sendMessage();
             }
         });
-    });
-</script>
+
+        $('#toggle-theme-button').click(function() {
+            body.toggleClass('light-theme');
+        });
+    </script>
 </body>
 </html>

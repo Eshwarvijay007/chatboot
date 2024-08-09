@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const cors = require('cors');
-const marked = require('marked');
+const md = require('markdown-it')();
 
 const app = express();
 const port = 3000;
@@ -30,13 +30,22 @@ app.post('/api/chat', async (req, res) => {
     try {
         const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
         const result = await model.generateContent(userMessage);
-        const modifiedResponse = result.response.text().replace(/\*\*/g && /\*/g , '\n'); // Process the response as needed
+
+        if (!result || !result.response || typeof result.response.text !== 'function') {
+            throw new Error('Invalid or empty response from API');
+        }
+
+        const responseText = result.response.text();
+        console.log('API Response:', responseText); // Log the raw response
+        const modifiedResponse = md.render(responseText); // Process the response as needed
+
         res.json({ response: modifiedResponse });
     } catch (error) {
         console.error('Error generating response:', error);
         res.status(500).json({ error: 'Failed to generate response' });
     }
 });
+
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
